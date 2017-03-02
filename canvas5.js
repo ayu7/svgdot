@@ -6,7 +6,11 @@ var intervalID;
 
 var dot=function(e){
     var r=10;
-    clear;
+    //idk why but calling clear here doesn't work, maybe something about interval and how the functions run?? not sure
+    clearInterval(intervalID);
+    while (pic.childNodes.length>0){
+         pic.removeChild(pic.childNodes[0]);}
+
     var width=parseInt(pic.getAttribute("width"));
     var height=parseInt(pic.getAttribute("height"));
 
@@ -18,18 +22,30 @@ var dot=function(e){
     c.setAttribute("stroke", "black");
     pic.appendChild(c);
 
+    var small=true;
+
     var grow=function(){
-	r++;
-	c.setAttribute("r", r);
-}
+      if (small)
+	       r++;
+      else
+         r--;
+	    c.setAttribute("r", r);
+
+      if (r >width/2 || r >height/2)
+        small=false;
+      if (r<1)
+        small=true;
+
+  }
+
     intervalID=window.setInterval(grow, 16);
-    
+
 }
 
 var clear=function(){
     stopIt;
     while (pic.childNodes.length>0){
-	pic.removeChild(pic.childNodes[0]);
+	       pic.removeChild(pic.childNodes[0]);
     }
 }
 
