@@ -1,30 +1,24 @@
-var pic= document.getElementById("vimage");
-var button=document.getElementById("button");
+var big=document.getElementById("big");
+var num=document.getElementById("num");
+var alpha=document.getElementById("alpha");
+var alpha0=document.getElementById("alpha0");
 
-var circle=function(e){
-    var x=e.offsetX;
-    var y=e.offsetY;
+var bigChange=function(e){
+    alert("BIGG");
     
-    var c= document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    c.setAttribute("cx", x);
-    c.setAttribute("cy", y);
-    c.setAttribute("r", 10);
-    c.setAttribute("fill", "red");
-    c.setAttribute("stroke", "black");
-    return c;
 }
 
-var addCircle=function(e){
-    var c=circle(e);
-    pic.appendChild(c);
-
-}
-   
-var clear=function(){
-    while (pic.childNodes.length>0){
-	pic.removeChild(pic.childNodes[0]);
-    }
+var numChange=function(e){
+    alert("num num");
+    e.stopPropagation();
 }
 
-pic.addEventListener("click", addCircle, true);
-button.addEventListener("click", clear);
+var alphaChange=function(e){
+    alert("AA BAA");
+}
+
+
+big.addEventListener("click", bigChange);
+num.addEventListener("click", numChange);
+alpha.addEventListener("click", alphaChange);
+alpha0.addEventListener("click", alphaChange);
