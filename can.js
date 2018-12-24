@@ -5,7 +5,7 @@ var alpha0=document.getElementById("alpha0");
 
 var bigChange=function(e){
     alert("BIGG");
-    
+
 }
 
 var numChange=function(e){
