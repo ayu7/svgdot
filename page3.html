@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <h1>move move move</h1>
+  </head>
+
+  <body>
+    <p>
+      Uses svg to make a canvas that can be interacted with. Clicking on the
+      canvas creates a yellow circle. The move button animates these dots and
+      cause them to bounces around. Further clicks increases the speed. There
+      is no option to stop. There is an option to clear, which kills the circles.
+      when it crosses an invisble vertical line the circle is split into two.
+      Double clicking turns the circle blue.
+    </p>
+    <svg id="vimage" height="500" width="500" style="border: 1px solid">
+
+
+    </svg>
+
+    <button id="clear"> Clear </button>
+    <button id="move"> Move </button>
+
+    <script src="svg3.js"></script>
+
+  </body>
+
+</html>
